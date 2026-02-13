@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2.0,
+	"id": "bubblestats",
+	"type": "widget",
+	"name": "Bubble Stats Widget",
+	"namespace": "BubbleStatsWidget",
+	"version": "1.0",
+	"author": "Mauro",
+	"url": "",
+	"description": "Widget de estatísticas em formato de bolhas para visualizar métricas e problemas do Zabbix baseado em porcentagem",
+	"actions": {
+		"widget.bubblestats.view": {
+			"class": "WidgetView"
+		},
+		"widget.bubblestats.history": {
+			"class": "WidgetHistory"
+		}
+	},
+	"widget": {
+		"js_class": "WidgetBubbleStats",
+		"form_class": "WidgetForm"
+	},
+	"assets": {
+		"js": ["class.widget.js"],
+		"css": ["widget.css"]
+	}
+}

@@ -1,0 +1,415 @@
+/* ============================================
+   Zabbix Bubble Stats Widget - Styles
+   ============================================ */
+
+/* IMPORTANTE: Seguindo o padrão do Echarts-Zabbix, não interferimos com o header padrão do Zabbix */
+/* O header é criado automaticamente pelo CWidgetView e não deve ser afetado pelo CSS do módulo */
+
+.bubble-stats-widget {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 200px;
+    position: relative !important;
+    /* Background transparente - usar o fundo do widget do Zabbix */
+    background: transparent !important;
+    /* Garantir que o widget não sobreponha o header */
+    /* O header do Zabbix geralmente tem z-index alto, então manter baixo aqui */
+    z-index: 1 !important;
+    /* CRÍTICO: overflow hidden para cortar qualquer conteúdo que saia */
+    overflow: hidden !important;
+    /* Garantir que o widget fique dentro da área do dashboard */
+    box-sizing: border-box !important;
+    /* Criar contexto de empilhamento */
+    isolation: isolate !important;
+    /* Garantir que não saia dos limites */
+    max-width: 100% !important;
+    max-height: 100% !important;
+    /* Usar clip-path como backup de contenção */
+    clip-path: inset(0);
+    /* CRÍTICO: Não bloquear eventos do header - o container filho terá pointer-events: none */
+    pointer-events: auto !important;
+    /* Garantir que ocupe todo o espaço disponível */
+    display: block !important;
+}
+
+/* Bubble Container - deve ocupar todo o espaço disponível do widget */
+/* IMPORTANTE: O container está dentro do _body do CWidget, que já está posicionado abaixo do header */
+.bubble-stats-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 200px;
+    /* Background transparente - usar o fundo do widget do Zabbix */
+    background: transparent !important;
+    /* CRÍTICO: overflow hidden para garantir que as bolhas não saiam */
+    overflow: hidden !important;
+    /* z-index baixo para garantir que não sobreponha o header do widget */
+    z-index: 1 !important;
+    /* CRÍTICO: pointer-events permite que o header do widget seja clicável */
+    /* O container só captura eventos nas áreas onde há bolhas */
+    pointer-events: none !important;
+    /* Garantir que o container contenha as bolhas */
+    contain: layout style paint !important;
+    /* Contexto de empilhamento para as bolhas */
+    isolation: isolate !important;
+    /* Garantir que não saia dos limites */
+    max-width: 100% !important;
+    max-height: 100% !important;
+    /* Garantir que o container seja o contexto de posicionamento */
+    transform: translateZ(0);
+    /* Clip-path como backup de contenção absoluta */
+    clip-path: inset(0);
+    /* Garantir que nada saia */
+    will-change: contents;
+}
+
+/* Bubbles - z-index baixo e contenção para não sobrepor o header */
+.bubble {
+    position: absolute !important;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out, box-shadow 0.2s ease-out;
+    user-select: none;
+    text-align: center;
+    /* Box-shadow mais pronunciado e vibrante como na imagem */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 
+                0 2px 6px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Default dark background to match JS style and prevent flash */
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(4px);
+    /* z-index baixo para não sobrepor o header */
+    z-index: 1 !important;
+    /* CRÍTICO: pointer-events: auto apenas nas bolhas para permitir interação */
+    /* O container tem pointer-events: none, então apenas as bolhas são clicáveis */
+    pointer-events: auto !important;
+    /* Garantir que as bolhas não saiam do container */
+    max-width: 100% !important;
+    max-height: 100% !important;
+    box-sizing: border-box !important;
+    /* Garantir contenção */
+    contain: layout style paint !important;
+    /* Padding interno para melhor espaçamento */
+    padding: 8px;
+}
+
+.bubble:hover {
+    transform: scale(1.08) translateY(-2px);
+    /* z-index baixo mesmo no hover para não sobrepor o header */
+    z-index: 5;
+    opacity: 1;
+    /* Box-shadow mais intenso no hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 
+                0 4px 10px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bubble:active {
+    cursor: grabbing;
+}
+
+/* Bubble Colors - mais vibrantes como na imagem */
+.bubble.positive {
+    color: #fff;
+    /* Verde mais vibrante para valores positivos */
+}
+
+.bubble.negative {
+    color: #fff;
+    /* Vermelho mais vibrante para valores negativos */
+}
+
+.bubble.neutral {
+    color: #fff;
+}
+
+/* Severity Colors for Problems - Border color handles by JS, background matches dark theme */
+.bubble.severity-0,
+.bubble.severity-1,
+.bubble.severity-2,
+.bubble.severity-3,
+.bubble.severity-4,
+.bubble.severity-5 {
+    background: rgba(20, 20, 20, 0.85);
+    border-style: solid;
+    border-width: 1px;
+    backdrop-filter: blur(4px);
+}
+
+/* Bubble Content - tipografia mais limpa e legível como na imagem */
+.bubble-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
+    /* Text-shadow mais pronunciado para melhor legibilidade */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 
+                 0 1px 3px rgba(0, 0, 0, 0.8),
+                 0 0 8px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.bubble-percentage {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    /* Text-shadow mais forte para destacar a porcentagem */
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95), 
+                 0 2px 4px rgba(0, 0, 0, 0.9),
+                 0 0 12px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    opacity: 1;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Espaçamento de letras mais apertado para números */
+    letter-spacing: -0.5px;
+}
+
+.bubble-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.bubble-value {
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 
+                 0 1px 3px rgba(0, 0, 0, 0.8),
+                 0 0 8px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 1.0;
+    line-height: 1.2;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.1px;
+}
+
+/* Tooltip - position absolute em vez de fixed para ficar contido */
+.bubble-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px;
+    pointer-events: none;
+    /* z-index baixo para não sobrepor o header */
+    z-index: 10;
+    min-width: 200px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.bubble-tooltip.visible {
+    display: block;
+}
+
+/* Tooltip Avançado com Gráfico */
+.bubble-advanced-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 10000;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.bubble-advanced-tooltip canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.tooltip-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a9eff;
+    margin-bottom: 4px;
+}
+
+.tooltip-host {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.tooltip-value {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.tooltip-percentage {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tooltip-percentage.positive {
+    color: #22c55e;
+}
+
+.tooltip-percentage.negative {
+    color: #ef4444;
+}
+
+/* Legend - z-index reduzido */
+.bubble-legend {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 11px;
+    color: #999;
+    z-index: 50;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-label {
+    font-size: 11px;
+    color: #ccc;
+}
+
+/* Stats Panel - z-index reduzido */
+.bubble-stats-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 11px;
+    color: #999;
+    z-index: 50;
+    min-width: 150px;
+}
+
+.stats-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.stats-item:last-child {
+    margin-bottom: 0;
+}
+
+.stats-label {
+    color: #999;
+}
+
+.stats-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Loading State */
+.bubble-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+}
+
+/* No Data State */
+.bubble-no-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bubble-name {
+        font-size: 11px;
+    }
+    
+    .bubble-percentage {
+        font-size: 14px;
+    }
+    
+    .bubble-value {
+        font-size: 9px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Estilos duplicados removidos - usando apenas as regras principais definidas acima */

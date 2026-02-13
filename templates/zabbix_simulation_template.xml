@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2025-02-12T17:15:00Z</date>
+    <groups>
+        <group>
+            <uuid>b2c26efcff7d4e34bd7c03bc2c09b1a7</uuid>
+            <name>Templates/Simulation</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>aa1e956a086145feb6de5237f4e1f110</uuid>
+            <template>Template_Bubble_Stats_Simulation_Downdetector</template>
+            <name>Template Bubble Stats Simulation (Downdetector)</name>
+            <description>Template to simulate Downdetector data for Zabbix Bubble Stats Loop.
+Generates random outage indicators for popular services.</description>
+            <groups>
+                <group>
+                    <name>Templates/Simulation</name>
+                </group>
+            </groups>
+            <discovery_rules>
+                <discovery_rule>
+                    <uuid>9064715ed9344f20a5fde6221a2ae02e</uuid>
+                    <name>Downdetector Service Discovery</name>
+                    <type>SCRIPT</type>
+                    <key>downdetector.discovery</key>
+                    <delay>1h</delay>
+                    <params>var services = [
+  {
+    "{#SERVICE}": "Gol Logo",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "Gol_logo.png"
+  },
+  {
+    "{#SERVICE}": "Icloud Logo.Svg",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "ICloud_logo.svg.png"
+  },
+  {
+    "{#SERVICE}": "Instagram",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "Instagram.png"
+  },
+  {
+    "{#SERVICE}": "Lol",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "LOL.jpg"
+  },
+  {
+    "{#SERVICE}": "Logo Konnet",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "Logo konnet.png"
+  },
+  {
+    "{#SERVICE}": "Psn Logo Png Image",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "PSN-Logo-PNG-Image.png"
+  },
+  {
+    "{#SERVICE}": "Telegram Logo.Svg",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "Telegram_logo.svg.webp"
+  },
+  {
+    "{#SERVICE}": "Amazon Web Services",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "amazon-web-services.png"
+  },
+  {
+    "{#SERVICE}": "Amazon",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "amazon.png"
+  },
+  {
+    "{#SERVICE}": "Among Us",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "among-us.png"
+  },
+  {
+    "{#SERVICE}": "Anydesk",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "anydesk.png"
+  },
+  {
+    "{#SERVICE}": "Apex",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "apex.png"
+  },
+  {
+    "{#SERVICE}": "Apple Tv",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "apple tv.png"
+  },
+  {
+    "{#SERVICE}": "Apple Store",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "apple-store.png"
+  },
+  {
+    "{#SERVICE}": "Apple Tv",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "apple-tv.webp"
+  },
+  {
+    "{#SERVICE}": "Appstore",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "appstore.png"
+  },
+  {
+    "{#SERVICE}": "Avianca",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "avianca.png"
+  },
+  {
+    "{#SERVICE}": "Azul",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "azul.png"
+  },
+  {
+    "{#SERVICE}": "Banco Central Do Brasil",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "banco-central-do-brasil.png"
+  },
+  {
+    "{#SERVICE}": "Banco Do Brasil",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "banco-do-brasil.png"
+  },
+  {
+    "{#SERVICE}": "Banco Inter",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "banco-inter.png"
+  },
+  {
+    "{#SERVICE}": "Bancodobrasil",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "bancodobrasil.png"
+  },
+  {
+    "{#SERVICE}": "Banrisul",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "banrisul.png"
+  },
+  {
+    "{#SERVICE}": "Battle Net",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "battle-net.png"
+  },
+  {
+    "{#SERVICE}": "Battlefield",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "battlefield.ico"
+  },
+  {
+    "{#SERVICE}": "Bf",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "bf.jpg"
+  },
+  {
+    "{#SERVICE}": "Bf",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "bf.png"
+  },
+  {
+    "{#SERVICE}": "Binance",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "binance.png"
+  },
+  {
+    "{#SERVICE}": "Bing",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "bing.png"
+  },
+  {
+    "{#SERVICE}": "Bradesco",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "bradesco.png"
+  },
+  {
+    "{#SERVICE}": "C6",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "c6.png"
+  },
+  {
+    "{#SERVICE}": "Caixa Economica",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "caixa-economica.png"
+  },
+  {
+    "{#SERVICE}": "Call Of Duty",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "call of duty.png"
+  },
+  {
+    "{#SERVICE}": "Cgr",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "cgr.png"
+  },
+  {
+    "{#SERVICE}": "Claro",
+    "{#CATEGORY}": "Telecom",
+    "{#FILE}": "claro.png"
+  },
+  {
+    "{#SERVICE}": "Cloudflare",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "cloudflare.png"
+  },
+  {
+    "{#SERVICE}": "Cod",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "cod.jpg"
+  },
+  {
+    "{#SERVICE}": "Correios",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "correios.png"
+  },
+  {
+    "{#SERVICE}": "Crunchyroll",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "crunchyroll.webp"
+  },
+  {
+    "{#SERVICE}": "Csgo",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "csgo.jpg"
+  },
+  {
+    "{#SERVICE}": "Dbd4",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "dbd4.png"
+  },
+  {
+    "{#SERVICE}": "Deezer",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "deezer.jpg"
+  },
+  {
+    "{#SERVICE}": "Deezer",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "deezer.png"
+  },
+  {
+    "{#SERVICE}": "Discord",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "discord.png"
+  },
+  {
+    "{#SERVICE}": "Disney Plus",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "disney-plus.png"
+  },
+  {
+    "{#SERVICE}": "Disney",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "disney.jpg"
+  },
+  {
+    "{#SERVICE}": "Dota2",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "dota2.jpg"
+  },
+  {
+    "{#SERVICE}": "Dota2",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "dota2.png"
+  },
+  {
+    "{#SERVICE}": "Download",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "download.png"
+  },
+  {
+    "{#SERVICE}": "Dropbox",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "dropbox.webp"
+  },
+  {
+    "{#SERVICE}": "Ecac",
+    "{#CATEGORY}": "Gov",
+    "{#FILE}": "ecac.jpg"
+  },
+  {
+    "{#SERVICE}": "Eoscial",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "eoscial.png"
+  },
+  {
+    "{#SERVICE}": "Epic Games",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "epic-games.png"
+  },
+  {
+    "{#SERVICE}": "Epic",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "epic.png"
+  },
+  {
+    "{#SERVICE}": "Eshop",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "eshop.png"
+  },
+  {
+    "{#SERVICE}": "Esocial",
+    "{#CATEGORY}": "Gov",
+    "{#FILE}": "esocial.png"
+  },
+  {
+    "{#SERVICE}": "Facebook Messenger",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "facebook-messenger.png"
+  },
+  {
+    "{#SERVICE}": "Facebook",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "facebook.png"
+  },
+  {
+    "{#SERVICE}": "Facetime",
+    "{#CATEGORY}": "Telecom",
+    "{#FILE}": "facetime.webp"
+  },
+  {
+    "{#SERVICE}": "Fifa",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "fifa.png"
+  },
+  {
+    "{#SERVICE}": "Fifa",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "fifa.webp"
+  },
+  {
+    "{#SERVICE}": "Fortinite",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "fortinite.jpg"
+  },
+  {
+    "{#SERVICE}": "Fortnite",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "fortnite.png"
+  },
+  {
+    "{#SERVICE}": "Forza",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "forza.png"
+  },
+  {
+    "{#SERVICE}": "Free Fire",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "free-fire.png"
+  },
+  {
+    "{#SERVICE}": "Garena",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "garena.png"
+  },
+  {
+    "{#SERVICE}": "Github",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "github.png"
+  },
+  {
+    "{#SERVICE}": "Globo Play",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "globo-play.png"
+  },
+  {
+    "{#SERVICE}": "Globo",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "globo.png"
+  },
+  {
+    "{#SERVICE}": "Globo",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "globo.svg"
+  },
+  {
+    "{#SERVICE}": "Globoplay",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "globoplay.jpg"
+  },
+  {
+    "{#SERVICE}": "Gmail",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "gmail.png"
+  },
+  {
+    "{#SERVICE}": "Gog Icon",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "gog-icon.png"
+  },
+  {
+    "{#SERVICE}": "Google Drive",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "google drive.png"
+  },
+  {
+    "{#SERVICE}": "Google Play",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "google play.avif"
+  },
+  {
+    "{#SERVICE}": "Google",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "google.png"
+  },
+  {
+    "{#SERVICE}": "Gta5",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "gta5.png"
+  },
+  {
+    "{#SERVICE}": "Halo",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "halo.png"
+  },
+  {
+    "{#SERVICE}": "Hbo Go",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "hbo-go.png"
+  },
+  {
+    "{#SERVICE}": "Hostgator",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "hostgator.png"
+  },
+  {
+    "{#SERVICE}": "Hostnet",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "hostnet.png"
+  },
+  {
+    "{#SERVICE}": "Itau",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "itau.png"
+  },
+  {
+    "{#SERVICE}": "Kinghost",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "kinghost.png"
+  },
+  {
+    "{#SERVICE}": "Linked",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "linked.png"
+  },
+  {
+    "{#SERVICE}": "Linkedin",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "linkedin.png"
+  },
+  {
+    "{#SERVICE}": "Locaweb",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "locaweb.png"
+  },
+  {
+    "{#SERVICE}": "Lol",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "lol.png"
+  },
+  {
+    "{#SERVICE}": "Messenfer",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "messenfer.png"
+  },
+  {
+    "{#SERVICE}": "Minecraft",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "minecraft.png"
+  },
+  {
+    "{#SERVICE}": "Netflix",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "netflix.webp"
+  },
+  {
+    "{#SERVICE}": "Nfe",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "nfe.webp"
+  },
+  {
+    "{#SERVICE}": "Nintendo",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "nintendo.png"
+  },
+  {
+    "{#SERVICE}": "Nubank",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "nubank.png"
+  },
+  {
+    "{#SERVICE}": "Office 365",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "office 365.png"
+  },
+  {
+    "{#SERVICE}": "Office",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "office.png"
+  },
+  {
+    "{#SERVICE}": "Office365",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "office365.png"
+  },
+  {
+    "{#SERVICE}": "Oi",
+    "{#CATEGORY}": "Telecom",
+    "{#FILE}": "oi.png"
+  },
+  {
+    "{#SERVICE}": "Origin",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "origin.png"
+  },
+  {
+    "{#SERVICE}": "Outlook",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "outlook.png"
+  },
+  {
+    "{#SERVICE}": "Overwatch",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "overwatch.png"
+  },
+  {
+    "{#SERVICE}": "Paramotn",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "paramotn.png"
+  },
+  {
+    "{#SERVICE}": "Paramount Plus",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "paramount_plus.png"
+  },
+  {
+    "{#SERVICE}": "Picpay",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "picpay.png"
+  },
+  {
+    "{#SERVICE}": "Play Store",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "play-store.png"
+  },
+  {
+    "{#SERVICE}": "Playstation",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "playstation.png"
+  },
+  {
+    "{#SERVICE}": "Plex Logo Bde7F56C4E Seeklogo.Com",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "plex-logo-BDE7F56C4E-seeklogo.com.png"
+  },
+  {
+    "{#SERVICE}": "Plex",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "plex.png"
+  },
+  {
+    "{#SERVICE}": "Pokemon",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "pokemon.png"
+  },
+  {
+    "{#SERVICE}": "Poker Stars",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "poker-stars.png"
+  },
+  {
+    "{#SERVICE}": "Prime Video",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "prime-video.png"
+  },
+  {
+    "{#SERVICE}": "Psn",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "psn.png"
+  },
+  {
+    "{#SERVICE}": "Pubg",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "pubg.png"
+  },
+  {
+    "{#SERVICE}": "Rdr2",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "rdr2.png"
+  },
+  {
+    "{#SERVICE}": "Receita Federal",
+    "{#CATEGORY}": "Gov",
+    "{#FILE}": "receita federal.jpg"
+  },
+  {
+    "{#SERVICE}": "Reddit",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "reddit.png"
+  },
+  {
+    "{#SERVICE}": "Regular Bf455C69Ae9E528127Ab8B5Eebcf7B6D",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "regular_bf455c69ae9e528127ab8b5eebcf7b6d.png"
+  },
+  {
+    "{#SERVICE}": "Roblox",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "roblox.png"
+  },
+  {
+    "{#SERVICE}": "Santander",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "santander.png"
+  },
+  {
+    "{#SERVICE}": "Sefaz",
+    "{#CATEGORY}": "Gov",
+    "{#FILE}": "sefaz.png"
+  },
+  {
+    "{#SERVICE}": "Sicoob",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "sicoob.jpg"
+  },
+  {
+    "{#SERVICE}": "Sicoob",
+    "{#CATEGORY}": "Banking",
+    "{#FILE}": "sicoob.png"
+  },
+  {
+    "{#SERVICE}": "Sisu",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "sisu.png"
+  },
+  {
+    "{#SERVICE}": "Skype",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "skype.png"
+  },
+  {
+    "{#SERVICE}": "Snapchat",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "snapchat.webp"
+  },
+  {
+    "{#SERVICE}": "Spotify",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "spotify.png"
+  },
+  {
+    "{#SERVICE}": "Steam",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "steam.png"
+  },
+  {
+    "{#SERVICE}": "Teamviewer",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "teamviewer.png"
+  },
+  {
+    "{#SERVICE}": "Tiktok",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "tiktok.png"
+  },
+  {
+    "{#SERVICE}": "Tiktok",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "tiktok.webp"
+  },
+  {
+    "{#SERVICE}": "Tim",
+    "{#CATEGORY}": "Telecom",
+    "{#FILE}": "tim.png"
+  },
+  {
+    "{#SERVICE}": "Tinder",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "tinder.webp"
+  },
+  {
+    "{#SERVICE}": "Tre",
+    "{#CATEGORY}": "Gov",
+    "{#FILE}": "tre.jpg"
+  },
+  {
+    "{#SERVICE}": "Ts",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "ts.png"
+  },
+  {
+    "{#SERVICE}": "Twich",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "twich.png"
+  },
+  {
+    "{#SERVICE}": "Twitch",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "twitch.png"
+  },
+  {
+    "{#SERVICE}": "Twitter",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "twitter.avif"
+  },
+  {
+    "{#SERVICE}": "Twitter",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "twitter.png"
+  },
+  {
+    "{#SERVICE}": "Uber",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "uber.png"
+  },
+  {
+    "{#SERVICE}": "Uplay",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "uplay.png"
+  },
+  {
+    "{#SERVICE}": "Valorant",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "valorant.png"
+  },
+  {
+    "{#SERVICE}": "Vivo",
+    "{#CATEGORY}": "Telecom",
+    "{#FILE}": "vivo.jpg"
+  },
+  {
+    "{#SERVICE}": "War Thunder",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "war-thunder.png"
+  },
+  {
+    "{#SERVICE}": "Warframe",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "warframe.png"
+  },
+  {
+    "{#SERVICE}": "Whatsapp",
+    "{#CATEGORY}": "Social",
+    "{#FILE}": "whatsapp.png"
+  },
+  {
+    "{#SERVICE}": "Wow",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "wow.png"
+  },
+  {
+    "{#SERVICE}": "Xbox",
+    "{#CATEGORY}": "Games",
+    "{#FILE}": "xbox.png"
+  },
+  {
+    "{#SERVICE}": "Xp",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "xp.png"
+  },
+  {
+    "{#SERVICE}": "Yahoo",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "yahoo.png"
+  },
+  {
+    "{#SERVICE}": "Yahoomail",
+    "{#CATEGORY}": "General",
+    "{#FILE}": "yahoomail.png"
+  },
+  {
+    "{#SERVICE}": "Youtube",
+    "{#CATEGORY}": "Media/Tech",
+    "{#FILE}": "youtube.png"
+  }
+];
+
+return JSON.stringify(services);</params>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>a9ed4e6ed9f54b92a2f6ea01adcc0fe0</uuid>
+                            <name>{#SERVICE}</name>
+                            <type>SCRIPT</type>
+                            <key>downdetector.sim[{#SERVICE}]</key>
+                            <delay>5s</delay>
+                            <history>1d</history>
+                            <trends>7d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <params>// Simulate smoother drifts using sine waves
+var service = "{#SERVICE}";
+var now = new Date().getTime() / 1000;
+
+function hash(str) {
+    var h = 0;
+    for (var i = 0; i &lt; str.length; i++) {
+        h = ((h &lt;&lt; 5) - h) + str.charCodeAt(i);
+        h |= 0;
+    }
+    return Math.abs(h);
+}
+
+var seed = hash(service);
+
+// Main wave period varies per service (3-7 min)
+var period = 180 + (seed % 240); 
+var t = (now + seed) / period;
+
+// Second harmonic (faster)
+var t2 = (now + seed) / (period / 3.4);
+
+// Mix waves: Main (0.7) + Ripple (0.3)
+var signal = (Math.sin(t) * 0.7) + (Math.sin(t2) * 0.3);
+
+// Normalize (-1 to 1) -&gt; (0 to 1) 
+var norm = (signal + 1) / 2;
+
+// Bias: Power curve makes "healthy" (low) state more common
+// ^3 keeps it low most of time, peaks occasionally
+var val = Math.pow(norm, 3) * 100;
+
+// Clamp 0-100
+if (val &lt; 0) val = 0;
+if (val &gt; 100) val = 100;
+
+return Math.floor(val);</params>
+                            <tags>
+                                <tag>
+                                    <tag>component</tag>
+                                    <value>downdetector-sim</value>
+                                </tag>
+                                <tag>
+                                    <tag>service</tag>
+                                    <value>{#SERVICE}</value>
+                                </tag>
+                                <tag>
+                                    <tag>category</tag>
+                                    <value>{#CATEGORY}</value>
+                                </tag>
+                                <!-- Image tags for Bubble Stats -->
+                                <tag>
+                                    <tag>bubble_image</tag>
+                                    <value>modules/ZabbixBubbleStats/assets/images/{#FILE}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$BUBBLESTATS_URL}</macro>
+                    <value>http://127.0.0.1/zabbix/modules/ZabbixBubbleStats</value>
+                    <description>URL to access the module assets for simulation discovery</description>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+
+</zabbix_export>
