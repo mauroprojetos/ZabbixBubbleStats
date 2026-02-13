@@ -34,6 +34,16 @@ O **Bubble Stats Widget** transforma métricas e problemas do Zabbix em bolhas f
 *   **Flexibilidade**: Suporta métricas (items) e problemas (triggers).
 *   **Personalização**: Ícones personalizados, cores e comportamentos ajustáveis.
 
+*   **Personalização**: Ícones personalizados, cores e comportamentos ajustáveis.
+
+---
+
+## 📸 Screenshots
+
+![Bubble Stats Dashboard](docs/imagem1.png)
+
+![Bubble Stats Detail](docs/imagem2.png)
+
 ---
 
 ## 💡 Inspiração e Motivação
